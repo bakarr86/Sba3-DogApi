@@ -40,3 +40,31 @@ export async function getBreedDetails(breedId) {
         throw error;
     }
 }
+//getRandomImage
+export async function getRandomImage() {
+    try {
+        const response = await fetch(`${DOG_API_BASE_URL}/images/search`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch random image');
+        }
+        const data = await response.json();
+        return data[0].url;
+    } catch (error) {
+        console.error('Error fetching random image:', error);
+        throw error;
+    }
+}
+
+// JSONPlaceholder API functions
+export async function getPosts() {
+    try {
+        const response = await fetch(`${JSON_PLACEHOLDER_BASE_URL}/posts`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch posts');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        throw error;
+    }
+}
