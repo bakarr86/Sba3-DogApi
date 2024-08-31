@@ -1,0 +1,50 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Explorer & Post Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Dog Breed Explorer & Post Manager</h1>
+    </header>
+    <main>
+        <section id="breed-list">
+            <h2>Dog Breeds</h2>
+            <select id="breed-select">
+                <option value="">Select a breed</option>
+            </select>
+        </section>
+        <section id="breed-info">
+            <h2>Breed Information</h2>
+            <div id="breed-details"></div>
+        </section>
+        <section id="random-image">
+            <h2>Random Dog Image</h2>
+            <button id="random-image-btn">Get Random Dog Image</button>
+            <div id="image-container"></div>
+        </section>
+        <section id="breed-search">
+            <h2>Search Dog Breeds</h2>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Enter breed name" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="search-results"></div>
+        </section>
+        <section id="post-manager">
+            <h2>Post Manager</h2>
+            <form id="create-post-form">
+                <input type="text" id="post-title" placeholder="Enter post title" required>
+                <textarea id="post-body" placeholder="Enter post body" required></textarea>
+                <button type="submit">Create Post</button>
+            </form>
+            <div id="posts-container"></div>
+        </section>
+    </main>
+    <div id="message-container"></div>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
