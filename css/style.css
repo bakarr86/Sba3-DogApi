@@ -85,3 +85,28 @@ body{
                 cursor: pointer;
                 border-radius: 4px;
                 }
+                /*message container and responsive coding*/
+                #message-container {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    display: none;
+                    }
+                    
+                    #message-container.error {
+                    background-color: #f44336;
+                    color: white;
+                    }
+                    
+                    #message-container:not(.error) {
+                    background-color: #4CAF50;
+                    color: white;
+                    }
+                    
+                    @media (max-width: 768px) {
+                    section {
+                    width: 100%;
+                    }
+                    }
