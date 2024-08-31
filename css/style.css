@@ -63,3 +63,25 @@ body{
             margin: 1rem 0;
             border-radius: 5px;
             }
+            /*breed detail styling*/
+            .breed-item, .post {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                }
+                
+                .details-btn, .edit-btn {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 4px;
+                }
