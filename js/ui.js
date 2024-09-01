@@ -9,3 +9,14 @@ export function populateBreedSelect(breeds) {
         breedSelect.appendChild(option);
     });
 }
+// breed details
+export function displayBreedDetails(breed) {
+    const breedDetails = document.getElementById('breed-details');
+    breedDetails.innerHTML = `
+        <h3>${breed.name}</h3>
+        <p><strong>Temperament:</strong> ${breed.temperament || 'Not available'}</p>
+        <p><strong>Life Span:</strong> ${breed.life_span || 'Not available'}</p>
+        <p><strong>Height:</strong> ${breed.height?.metric || 'Not available'} cm</p>
+        <p><strong>Weight:</strong> ${breed.weight?.metric || 'Not available'} kg</p>
+    `;
+}
