@@ -20,3 +20,23 @@ export function displayBreedDetails(breed) {
         <p><strong>Weight:</strong> ${breed.weight?.metric || 'Not available'} kg</p>
     `;
 }
+//display random image and display search result function
+export function displayRandomImage(imageUrl) {
+    const imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = `<img src="${imageUrl}" alt="Random dog image">`;
+}
+
+export function displaySearchResults(breeds) {
+    const searchResults = document.getElementById('search-results');
+    searchResults.innerHTML = '';
+    breeds.forEach(breed => {
+        const breedItem = document.createElement('div');
+        breedItem.classList.add('breed-item');
+        breedItem.innerHTML = `
+            <h3>${breed.name}</h3>
+            <p><strong>Temperament:</strong> ${breed.temperament || 'Not available'}</p>
+            <button class="details-btn" data-breed-id="${breed.id}">View Details</button>
+        `;
+        searchResults.appendChild(breedItem);
+    });
+}
