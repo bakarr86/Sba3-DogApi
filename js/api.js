@@ -87,3 +87,20 @@ export async function createPost(post) {
         throw error;
     }
 }
+//update post
+export async function updatePost(postId, updates) {
+    try {
+        const response = await fetch(`${JSON_PLACEHOLDER_BASE_URL}/posts/${postId}`, {
+            method: 'PATCH',
+            body: JSON.stringify(updates),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Failed to update post');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error updating post:', error);
+        throw error;
