@@ -1,5 +1,5 @@
 const DOG_API_BASE_URL = 'https://api.thedogapi.com/v1';
-//const JSON_PLACEHOLDER_BASE_URL = 'https://jsonplaceholder.typicode.com';
+const JSON_PLACEHOLDER_BASE_URL = 'https://dummyjson.com';
 
 // Dog API functions
 export async function getBreeds() {
@@ -103,4 +103,4 @@ export async function updatePost(postId, updates) {
         return await response.json();
     } catch (error) {
         console.error('Error updating post:', error);
-        throw error;
+        throw error;}}
