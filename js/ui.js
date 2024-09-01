@@ -40,3 +40,34 @@ export function displaySearchResults(breeds) {
         searchResults.appendChild(breedItem);
     });
 }
+// display posts 
+export function displayPosts(posts) {
+    const postsContainer = document.getElementById('posts-container');
+    postsContainer.innerHTML = '';
+
+    // Check if posts is a single object or an array
+    if (Array.isArray(posts.posts)) {
+        // If posts is an array, iterate over it
+        posts.posts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.classList.add('post');
+            postElement.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${post.body}</p>
+                <button class="edit-btn" data-post-id="${post.id}">Edit</button>
+            `;
+            postsContainer.appendChild(postElement);
+        });
+    } else {
+        // If posts is a single object, display its content directly
+        const postElement = document.createElement('div');
+        console.log(posts.id)
+        postElement.classList.add('post');
+        postElement.innerHTML = `
+            <h3>${posts.title}</h3>
+            <p>${posts.body}</p>
+            <button class="edit-btn" data-post-id="${posts.id}">Edit</button>
+        `;
+        postsContainer.appendChild(postElement);
+    }
+}
