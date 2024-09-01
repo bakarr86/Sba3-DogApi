@@ -71,3 +71,13 @@ export function displayPosts(posts) {
         postsContainer.appendChild(postElement);
     }
 }
+//show message
+export function showMessage(message, isError = false) {
+    const messageContainer = document.getElementById('message-container');
+    messageContainer.textContent = message;
+    messageContainer.classList.toggle('error', isError);
+    messageContainer.style.display = 'block';
+    setTimeout(() => {
+        messageContainer.style.display = 'none';
+    }, 3000);
+}
