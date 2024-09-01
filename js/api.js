@@ -68,3 +68,22 @@ export async function getPosts() {
         throw error;
     }
 }
+// create post
+export async function createPost(post) {
+    try {
+        const response = await fetch(`${JSON_PLACEHOLDER_BASE_URL}/posts/add`, {
+            method: 'POST',
+            body: JSON.stringify(post),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Failed to create post');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error creating post:', error);
+        throw error;
+    }
+}
